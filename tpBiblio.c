@@ -43,9 +43,10 @@ return choix;
 
 int main()
 {
-int reponse,chx;
-T_Bibliotheque B; 
-init( &B );
+	int reponse,chx;
+	T_Bibliotheque B; 
+	init(&B);
+	chargement(&B);
 
 	do
 	{
@@ -81,17 +82,16 @@ init( &B );
 				printf("ERREUR : Livre non supprimé !");
 			else
 				printf("Livre supprimé !");
-		
-		
+			break;
+		default:
+			printf("Entrée incorrecte ! Veuillez rééssayer\n\n");
+			break;
 		}
 
-}while(chx!=0);
+	}while(chx!=0);
 
+	sauvegarde(&B);
 
-
-
-
-
-return 0;
+	return 0;
 
 }
