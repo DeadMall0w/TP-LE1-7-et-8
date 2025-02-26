@@ -26,70 +26,21 @@ int ajouterLivre(T_Bibliotheque  *ptrB)
 
 int  afficherBibliotheque(const T_Bibliotheque  *ptrB)
 {
-<<<<<<< Updated upstream
-int i;
-if(ptrB->nbLivres==0)
-	return 0;
-=======
 	int i;
 		if(ptrB->nbLivres==0)
 	return PAS_OK;
->>>>>>> Stashed changes
 	else
 		{
 		for(i=0;i<ptrB->nbLivres;i++)
 			{
 			afficherLivre( &(ptrB->etagere[i])  );
 			
-<<<<<<< Updated upstream
-=======
-		return OK;
-	}
-}
-
-int rechercherLivresParAuteur(const T_Bibliotheque *ptrB, const char * auteur)
-{
-	int i;
-	if(ptrB->nbLivres==0)
-		return PAS_OK;
-	else
-	{
-		for(i=0; i < ptrB->nbLivres; i++){
-			if(strcmp((ptrB->etagere[i].auteur), auteur) == 0){
-				afficherLivre( &(ptrB->etagere[i]));
->>>>>>> Stashed changes
 			}
 
-<<<<<<< Updated upstream
 
 		
 		return 1;
 		}
-=======
-		return OK;
-	}
-
-}
-
-int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre)
-{
-	int i;
-	if(ptrB->nbLivres==0)
-		return PAS_OK;
-	else
-	{
-		for(i=0; i < ptrB->nbLivres; i++){
-			if(strcmp((ptrB->etagere[i].titre), titre) == 0){
-				afficherLivre( &(ptrB->etagere[i]));
-				return i;
-			}
-		}
-
-		return PAS_OK; // si le livre n'est pas trouvé
-
-	}
-
->>>>>>> Stashed changes
 }
 
 // fonction : supprimerLivre 
@@ -100,7 +51,6 @@ int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre)
 // titre = titre du livre à supprimer
 int supprimerLivre(T_Bibliotheque *ptrB, const char* titre )
 {
-<<<<<<< Updated upstream
 	// déclaration de i(variable utilitaire) et pos(position du livre)
 	int pos,i;
 	// vérifie que la suppression est possible
@@ -123,31 +73,6 @@ int supprimerLivre(T_Bibliotheque *ptrB, const char* titre )
 	{
 		return 0;
 	}
-=======
-    // déclaration de i(variable utilitaire) et pos(position du livre)
-    int pos,i;
-    // vérifie que la suppression est possible
-    if (ptrB->nbLivres > 0) 
-    {
-        pos = rechercherLivreParTitre(ptrB, titre);
-
-        if ( pos >= 0 && pos < ptrB->nbLivres)
-        {
-            // décale tous les livres pour ecraser le livre à supprimer 
-            for ( i = pos ; i < ptrB->nbLivres ; i++)
-            {
-                ptrB->etagere[i]= ptrB->etagere[i+1];
-            }
-            // decrémente de un le nombre de livres de la bibliothéque
-            ptrB->nbLivres = ptrB->nbLivres - 1;
-        }
-    return OK;
-    }
-    else 
-    {
-        return PAS_OK;
-    }
->>>>>>> Stashed changes
 }
 
 
