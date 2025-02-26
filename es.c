@@ -47,6 +47,7 @@ lire(chaine,nbcarac); // lire du TP4 (modifiée)
 return chaine;
 }
 
+
 void afficherChaine(const char *nomChamp, const char *valeur)
 {
 printf("%s %s",nomChamp,valeur);

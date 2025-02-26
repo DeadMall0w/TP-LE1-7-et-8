@@ -5,6 +5,10 @@ void saisirLivre(T_livre * ptrL)
 {
 lireChaine("TITRE :", (ptrL->titre), MAX_TITRE );
 lireChaine("AUTEUR :", (ptrL->auteur ), MAX);
+lireChaine("CODE :", (ptrL->code), MAX_TITRE );
+lireChaine("EDITEUR :", (ptrL->editeur ), MAX);
+printf("ANNEE : ");
+scanf("%d", &(ptrL->annee ));
 }
 
 void afficherLivre(const T_livre *ptrL)

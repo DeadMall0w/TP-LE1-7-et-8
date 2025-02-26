@@ -10,4 +10,5 @@ char *lire(char *lachaine,int nbMAXcaracAsaisir);
 char *lireChaine(const char *, char * , int );
 void afficherChaine(const char *,const char *);
 
+
 #endif
