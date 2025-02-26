@@ -22,7 +22,7 @@ typedef int T_annee;
 
 
 // à utiliser pour gérer l'emprunt d'un livre
-
+/*
 typedef enum {lu,ma,me,je,ve,sa,di} T_Jour;
 typedef enum {janv,fevr,mars,avri,mai,juin,juil,aout,sept,octo,nove,dece} T_Mois;
 
@@ -33,8 +33,8 @@ T_Jour lejour;
 int ledate;
 T_Mois lemois;
 int lannee
-}T_Emp ;
-
+} T_Emp ;
+*/
 
 
 // debut de TP, on utilisera les 2 champs titre et auteur
