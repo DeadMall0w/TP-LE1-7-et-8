@@ -25,4 +25,8 @@ int supprimerLivre(T_Bibliotheque *ptrB, const char* titre );
 int rechercherLivresParAuteur(const T_Bibliotheque *ptrB, const char * auteur);
 int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre);
 
+void sauvegarde(T_Bibliotheque *ptrB);
+void chargement(T_Bibliotheque *ptrB);
+void lectureFichierTXT();
+
 #endif
