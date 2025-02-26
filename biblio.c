@@ -111,6 +111,3 @@ int supprimerLivre(T_Bibliotheque *ptrB, const char* titre )
 	}
 }
 
-
-
-
