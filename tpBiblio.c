@@ -52,11 +52,11 @@ int main()
 		chx= menu();
 		switch(chx)
 		{
-		case  1 : reponse = ajouterLivre(   &B  );
+		case  1 : reponse = ajouterLivre(&B);
 					if (reponse==1)
-						printf(" ajout reussi !!");
+						printf("Ajout reussi !!");
 						else
-						printf("impossible d ajouter (bibliotheque pleine)");
+						printf("Impossible d ajouter (bibliotheque pleine)");
 				break;
 		case 2 : reponse=afficherBibliotheque(&B);
 				if (reponse==0)	
@@ -64,7 +64,6 @@ int main()
 
 				break;	
 		case 3:
-		printf("recherche de livre par titre...");
 			lireChaine("titre :", titre, K_MaxTit);
 
 			rechercherLivreParTitre(&B, titre); 
@@ -74,8 +73,14 @@ int main()
 
 			rechercherLivreParTitre(&B, auteur); 
 			break;
-		//TODO : Rajouter les autres cases
-		
+		case 5:
+			lireChaine("titre :", titre, K_MaxTit);
+
+			int result = supprimerLivre(&B, titre);
+			if (result == 0)
+				printf("ERREUR : Livre non supprimé !");
+			else
+				printf("Livre supprimé !");
 		
 		
 		}

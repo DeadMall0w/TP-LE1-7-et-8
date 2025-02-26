@@ -22,5 +22,7 @@ int ajouterLivre(T_Bibliotheque  *ptrB);
 int afficherBibliotheque(const T_Bibliotheque  *ptrB);
 int rechercherLivresParAuteur(const T_Bibliotheque  *ptrB, const char * auteur);
 int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre);
+int supprimerLivre(T_Bibliotheque *ptrB, const char* titre);
+
 
 #endif
