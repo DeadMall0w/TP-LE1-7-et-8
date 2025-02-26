@@ -53,13 +53,13 @@ init( &B );
 		switch(chx)
 		{
 		case  1 : reponse = ajouterLivre(&B);
-					if (reponse==1)
+					if (reponse==OK)
 						printf("Ajout reussi !!");
 						else
 						printf("Impossible d ajouter (bibliotheque pleine)");
 				break;
 		case 2 : reponse=afficherBibliotheque(&B);
-				if (reponse==0)	
+				if (reponse==PAS_OK)	
 						printf("La bibliotheque est vide");
 
 				break;	
@@ -77,7 +77,7 @@ init( &B );
 			lireChaine("titre :", titre, K_MaxTit);
 
 			int result = supprimerLivre(&B, titre);
-			if (result == 0)
+			if (result == PAS_OK)
 				printf("ERREUR : Livre non supprimé !");
 			else
 				printf("Livre supprimé !");
