@@ -2,6 +2,7 @@
 #include "biblio.h"
 
 T_Aut auteur;
+T_Titre titre;
 
 int menu()
 {
@@ -62,13 +63,16 @@ int main()
 						printf("La bibliotheque est vide");
 
 				break;	
-		case 4: 
-			printf("Entrez le nom de l'auteur : \n ");
-			//fgets(auteur, K_MaxAut, stdin);
-			//getchar();
-			lireChaine("auteur :", auteur, K_MaxAut );
+		case 3:
+		printf("recherche de livre par titre...");
+			lireChaine("titre :", titre, K_MaxTit);
 
-			rechercherLivresParAuteur(&B, auteur); 
+			rechercherLivreParTitre(&B, titre); 
+			break;
+		case 4: 
+			lireChaine("auteur :", auteur, K_MaxAut);
+
+			rechercherLivreParTitre(&B, auteur); 
 			break;
 		//TODO : Rajouter les autres cases
 		

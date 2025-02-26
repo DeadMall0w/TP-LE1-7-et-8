@@ -40,22 +40,38 @@ int  afficherBibliotheque(const T_Bibliotheque  *ptrB)
 
 int rechercherLivresParAuteur(const T_Bibliotheque *ptrB, const char * auteur)
 {
-	printf("auteur recherché : %s \n", auteur);
 	int i;
 	if(ptrB->nbLivres==0)
 		return 0;
 	else
 	{
 		for(i=0; i < ptrB->nbLivres; i++){
-			if(strcmp(&(ptrB->etagere[i].auteur), auteur) == 0){
+			if(strcmp((ptrB->etagere[i].auteur), auteur) == 0){
 				afficherLivre( &(ptrB->etagere[i]));
 			}
 		}
 
 		return 1;
 	}
+
 }
 
+int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre)
+{
+	int i;
+	if(ptrB->nbLivres==0)
+		return 0;
+	else
+	{
+		for(i=0; i < ptrB->nbLivres; i++){
+			if(strcmp((ptrB->etagere[i].titre), titre) == 0){
+				afficherLivre( &(ptrB->etagere[i]));
+				return i;
+			}
+		}
+
+	}
+}
 
 
 
