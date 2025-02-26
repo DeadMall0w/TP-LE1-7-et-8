@@ -23,7 +23,7 @@ typedef struct
 //prototypes
 void init (T_Bibliotheque *ptrB);
 int ajouterLivre(T_Bibliotheque  *ptrB);
-int  afficherBibliotheque(const T_Bibliotheque  *ptrB);
+int afficherBibliotheque(const T_Bibliotheque  *ptrB);
 int supprimerLivre(T_Bibliotheque *ptrB, const char* titre );
 
 
