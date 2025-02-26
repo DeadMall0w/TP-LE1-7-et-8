@@ -19,7 +19,7 @@ afficherChaine("EDITEUR :", (ptrL->editeur ));
 printf("\n");
 printf("ANNEE : %d ",(ptrL->annee));
 printf(" - ");
-afficherChaine("EMPRUNTEUR :", (ptrL->emprunteur));
+afficherChaine("EMPRUNTEUR :", (ptrL->emprunteur.nomemprunteur));
 printf("\n");
 }
 
