@@ -16,9 +16,6 @@ typedef struct
 
 } T_Bibliotheque;
 
-//CACA PROUT
-
-
 
 //prototypes
 void init (T_Bibliotheque *ptrB);
