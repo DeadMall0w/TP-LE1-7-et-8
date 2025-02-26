@@ -66,12 +66,12 @@ init( &B );
 		case 3:
 			lireChaine("titre :", titre, K_MaxTit);
 
-			rechercherLivreParTitre(&B, titre); 
+			rechercherLivresParAuteur(&B, titre); 
 			break;
 		case 4: 
 			lireChaine("auteur :", auteur, K_MaxAut);
 
-			rechercherLivreParTitre(&B, auteur); 
+			rechercherLivresParAuteur(&B, auteur); 
 			break;
 		case 5:
 			lireChaine("titre :", titre, K_MaxTit);

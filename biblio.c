@@ -39,8 +39,44 @@ int  afficherBibliotheque(const T_Bibliotheque  *ptrB)
 
 
 		
-		return PAS_OK;
+		return OK;
 		}
+}
+
+int rechercherLivresParAuteur(const T_Bibliotheque *ptrB, const char * auteur)
+{
+	int i;
+	if(ptrB->nbLivres==0)
+		return 0;
+	else
+	{
+		for(i=0; i < ptrB->nbLivres; i++){
+			if(strcmp((ptrB->etagere[i].auteur), auteur) == 0){
+				afficherLivre( &(ptrB->etagere[i]));
+			}
+		}
+
+		return 1;
+	}
+
+}
+
+int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre)
+{
+	int i;
+	if(ptrB->nbLivres==0)
+		return -1;
+	else
+	{
+		for(i=0; i < ptrB->nbLivres; i++){
+			if(strcmp((ptrB->etagere[i].titre), titre) == 0){
+				afficherLivre( &(ptrB->etagere[i]));
+				return i;
+			}
+		}
+
+		return -1; // si le livre n'est pas trouvé
+	}
 }
 
 // fonction : supprimerLivre 
