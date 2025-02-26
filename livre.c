@@ -13,5 +13,13 @@ afficherChaine("TITRE :", (ptrL->titre));
 printf(" - ");
 afficherChaine("AUTEUR :", (ptrL->auteur ));
 printf("\n");
+afficherChaine("CODE :", (ptrL->code));
+printf(" - ");
+afficherChaine("EDITEUR :", (ptrL->editeur ));
+printf("\n");
+printf("ANNEE : %d ",(ptrL->annee));
+printf(" - ");
+afficherChaine("EMPRUNTEUR :", (ptrL->emprunteur));
+printf("\n");
 }
 
