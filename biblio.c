@@ -60,7 +60,7 @@ int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre)
 {
 	int i;
 	if(ptrB->nbLivres==0)
-		return 0;
+		return -1;
 	else
 	{
 		for(i=0; i < ptrB->nbLivres; i++){
@@ -70,7 +70,10 @@ int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre)
 			}
 		}
 
+		return -1; // si le livre n'est pas trouvé
+
 	}
+
 }
 
 // fonction : supprimerLivre 
@@ -86,10 +89,8 @@ int supprimerLivre(T_Bibliotheque *ptrB, const char* titre)
     // vérifie que la suppression est possible
     if (ptrB->nbLivres > 0) 
     {
-        pos = rechercheLivreParTitre(&ptrB, titre);
-		if (pos == -1)
-			return 0;
-			
+        pos = rechercherLivreParTitre(ptrB, titre);
+
         if ( pos >= 0 && pos < ptrB->nbLivres)
         {
             // décale tous les livres pour ecraser le livre à supprimer 
