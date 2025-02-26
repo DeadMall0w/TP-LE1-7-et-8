@@ -103,7 +103,7 @@ int supprimerLivre(T_Bibliotheque *ptrB, const char* titre )
 			// decrémente de un le nombre de livres de la bibliothéque
 			ptrB->nbLivres = ptrB->nbLivres - 1;
 		}
-	return OK;
+	return PAS_OK;
 	}
 	else 
 	{
