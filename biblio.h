@@ -1,6 +1,7 @@
 #ifndef BIBLIO_H   //compilation conditionnelle
 #define BIBLIO_H
-
+#define OK 1
+#define PAS_OK -1
 
 #include "livre.h"
 

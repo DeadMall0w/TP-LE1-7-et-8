@@ -1,6 +1,9 @@
 // TP GESTION D'UNE BIBLIOTHEQUE 
 #include "biblio.h"
 
+T_Aut auteur;
+T_Titre titre;
+
 int menu()
 {
 	int choix;
@@ -44,28 +47,43 @@ int reponse,chx;
 T_Bibliotheque B; 
 init( &B );
 
-do
-{
-chx= menu();
-switch(chx)
+	do
 	{
-	case  1 : reponse = ajouterLivre(   &B  );
-				if (reponse==1)
-					printf(" ajout reussi !!");
-					else
-					printf("impossible d ajouter (bibliotheque pleine)");
-			break;
-	case 2 : reponse=afficherBibliotheque(&B);
-			if (reponse==0)	
-					printf("La bibliotheque est vide");
+		chx= menu();
+		switch(chx)
+		{
+		case  1 : reponse = ajouterLivre(&B);
+					if (reponse==1)
+						printf("Ajout reussi !!");
+						else
+						printf("Impossible d ajouter (bibliotheque pleine)");
+				break;
+		case 2 : reponse=afficherBibliotheque(&B);
+				if (reponse==0)	
+						printf("La bibliotheque est vide");
 
-			break;	
-	
-	
-	
-	
-	
-	}
+				break;	
+		case 3:
+			lireChaine("titre :", titre, K_MaxTit);
+
+			rechercherLivreParTitre(&B, titre); 
+			break;
+		case 4: 
+			lireChaine("auteur :", auteur, K_MaxAut);
+
+			rechercherLivreParTitre(&B, auteur); 
+			break;
+		case 5:
+			lireChaine("titre :", titre, K_MaxTit);
+
+			int result = supprimerLivre(&B, titre);
+			if (result == 0)
+				printf("ERREUR : Livre non supprimé !");
+			else
+				printf("Livre supprimé !");
+		
+		
+		}
 
 }while(chx!=0);
 
