@@ -55,7 +55,7 @@ init( &B );
 		case  1 : reponse = ajouterLivre(&B);
 					if (reponse==OK)
 						printf("Ajout reussi !!");
-						else
+					else
 						printf("Impossible d ajouter (bibliotheque pleine)");
 				break;
 		case 2 : reponse=afficherBibliotheque(&B);
@@ -66,7 +66,7 @@ init( &B );
 		case 3:
 			lireChaine("titre :", titre, K_MaxTit);
 
-			rechercherLivresParAuteur(&B, titre); 
+			rechercherLivreParTitre(&B, titre); 
 			break;
 		case 4: 
 			lireChaine("auteur :", auteur, K_MaxAut);
