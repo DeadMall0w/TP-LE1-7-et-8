@@ -27,8 +27,8 @@ int ajouterLivre(T_Bibliotheque  *ptrB)
 int  afficherBibliotheque(const T_Bibliotheque  *ptrB)
 {
 	int i;
-		if(ptrB->nbLivres==0)
-	return PAS_OK;
+	if(ptrB->nbLivres==0)
+		return PAS_OK;
 	else
 		{
 		for(i=0;i<ptrB->nbLivres;i++)
@@ -39,7 +39,7 @@ int  afficherBibliotheque(const T_Bibliotheque  *ptrB)
 
 
 		
-		return 1;
+		return PAS_OK;
 		}
 }
 
@@ -56,7 +56,7 @@ int supprimerLivre(T_Bibliotheque *ptrB, const char* titre )
 	// vérifie que la suppression est possible
 	if (ptrB->nbLivres > 0) 
 	{
-		pos = rechercheLivreParTitre(&ptrB, titre);
+		pos = rechercherLivreParTitre(ptrB, titre);
 		if ( pos >= 0 && pos < ptrB->nbLivres)
 		{
 			// décale tous les livres pour ecraser le livre à supprimer 
@@ -67,11 +67,11 @@ int supprimerLivre(T_Bibliotheque *ptrB, const char* titre )
 			// decrémente de un le nombre de livres de la bibliothéque
 			ptrB->nbLivres = ptrB->nbLivres - 1;
 		}
-	return 1;
+	return OK;
 	}
 	else 
 	{
-		return 0;
+		return PAS_OK;
 	}
 }
 
