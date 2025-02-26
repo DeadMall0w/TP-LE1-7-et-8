@@ -43,9 +43,10 @@ return choix;
 
 int main()
 {
-int reponse,chx;
-T_Bibliotheque B; 
-init( &B );
+	int reponse,chx;
+	T_Bibliotheque B; 
+	init(&B);
+	chargement(&B);
 
 	do
 	{
@@ -90,7 +91,7 @@ init( &B );
 
 
 
-
+sauvegarde(&B);
 
 return 0;
 
