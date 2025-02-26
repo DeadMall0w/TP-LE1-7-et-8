@@ -82,17 +82,16 @@ int main()
 				printf("ERREUR : Livre non supprimé !");
 			else
 				printf("Livre supprimé !");
-		
-		
+			break;
+		default:
+			printf("Entrée incorrecte ! Veuillez rééssayer\n\n");
+			break;
 		}
 
-}while(chx!=0);
+	}while(chx!=0);
 
+	sauvegarde(&B);
 
-
-
-sauvegarde(&B);
-
-return 0;
+	return 0;
 
 }
