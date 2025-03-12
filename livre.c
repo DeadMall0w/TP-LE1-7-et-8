@@ -26,5 +26,8 @@ printf("ANNEE : %d ",(ptrL->annee));
 printf(" - ");
 afficherChaine("EMPRUNTEUR :", (ptrL->emprunteur.nomemprunteur));
 printf("\n");
+if ( *ptrL->emprunteur.nomemprunteur != '\0' ){
+	printf(" DATE D'EMPRUNT : %d/%d/%d\n", ptrL->emprunteur.ledate,ptrL->emprunteur.lemois+1,ptrL->emprunteur.lannee);
+}
 }
 
