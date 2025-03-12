@@ -1,7 +1,8 @@
 # include "biblio.h"
 # include "livre.h"
+# include <time.h>
 
-
+#define TEMPS_LOCATION 20
 
 void init (T_Bibliotheque *ptrB)
 {
@@ -324,7 +325,7 @@ void lireDateSysteme(T_Emp *E)
 	if (strcmp(m,"novembre")==0) E->lemois=nove;
 	if (strcmp(m,"decembre")==0) E->lemois=dece;
 
-
+	E->timeStamp = time(NULL);
 	E->lannee=a;
 		}
 		else
@@ -339,5 +340,22 @@ void lireDateSysteme(T_Emp *E)
 
 
 		}
+
+}
+
+int livreRetard(T_Bibliotheque* B){
+	int currentTime = time(NULL);
+
+	for (int i = 0; i < B->nbLivres; i++)
+	{
+		if (strcmp(B->etagere[i].emprunteur.nomemprunteur, "") != 0)
+		if (B->etagere[i].emprunteur.timeStamp + TEMPS_LOCATION < currentTime){
+			// le livre est en retard 
+			printf("%s - %s \n", B->etagere[i].titre, B->etagere[i].emprunteur.nomemprunteur);
+		}
+	}
+	
+
+	return OK;
 
 }

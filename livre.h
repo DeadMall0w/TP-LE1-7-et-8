@@ -35,6 +35,7 @@ T_Jour lejour;
 int ledate;
 T_Mois lemois;
 int lannee;
+int timeStamp;
 } T_Emp ;
 
 

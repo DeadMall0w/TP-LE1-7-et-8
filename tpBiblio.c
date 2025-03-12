@@ -30,7 +30,7 @@ printf("\n 10 - trier les livres (par annee)");
 // vous pourrez alors faire les menus 11,12,etc...
 // printf("\n 11- lister les livres disponibles "); 
 // printf("\n 12 - lister les emprunts en retard "); //on suppose qu'un emprunt dure 7 jours.
-// printf("\n 13 - ... imaginez vous même vos propres fonctionnalités ")
+printf("\n 13 - Voir les livres en retard !");
 
 printf("\n 0 - QUITTER");
 printf("\n Votre choix : ");
@@ -123,6 +123,10 @@ int main()
 			else
 				printf("Le livre n'a pas pu être rendu !\n");
 				
+			break;
+
+		case 13:
+			livreRetard(&B);
 			break;
 			
 		default:

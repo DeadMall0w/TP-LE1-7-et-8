@@ -32,6 +32,9 @@ int trier_auteur(T_Bibliotheque *ptrB);
 int trier_annee(T_Bibliotheque *ptrB);
 void lireDateSysteme(T_Emp *E);
 
+
+int livreRetard(T_Bibliotheque* B);
+
 void sauvegarde(T_Bibliotheque *ptrB);
 void chargement(T_Bibliotheque *ptrB);
 
