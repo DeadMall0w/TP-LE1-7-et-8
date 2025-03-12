@@ -25,6 +25,7 @@ int afficherBibliotheque(const T_Bibliotheque  *ptrB);
 int supprimerLivre(T_Bibliotheque *ptrB, const char* titre );
 int rechercherLivresParAuteur(const T_Bibliotheque *ptrB, const char * auteur);
 int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre);
+int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp *emprunteur);
 
 void sauvegarde(T_Bibliotheque *ptrB);
 void chargement(T_Bibliotheque *ptrB);

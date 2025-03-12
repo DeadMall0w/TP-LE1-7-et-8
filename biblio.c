@@ -153,7 +153,7 @@ void chargement(T_Bibliotheque *ptrB)
 	else puts("ECHEC DE CHARGEMENT  !!!!!  ");
 }
 
-int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp emprunteur)
+int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp *emprunteur)
 {
 	// déclaration de pos(position du livre)
 	int pos;
@@ -163,7 +163,7 @@ int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp emprunteur)
 		pos = rechercherLivreParTitre(ptrB, titre);
 		if ( pos >= 0 && pos < ptrB->nbLivres)
 		{
-			stpcpy(ptrB->etagere[pos].emprunteur.nomemprunteur,emprunteur.nomemprunteur);
+			stpcpy(ptrB->etagere[pos].emprunteur.nomemprunteur,emprunteur->nomemprunteur);
 		}
 	return OK;
 	}

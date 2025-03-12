@@ -95,10 +95,9 @@ int main()
 			printf("Entrée incorrecte ! Veuillez rééssayer\n\n");
 			break;
 		case 6:
-			int result;
 			lireChaine("titre :", titre, K_MaxTit);
 			lireChaine("nom de l'emprunteur :", emprunteur.nomemprunteur,K_MaxEmp);
-			result = emprunt(&B,titre,emprunteur);
+			result = emprunt(&B,titre,&emprunteur);
 			
 		}
 
