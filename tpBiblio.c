@@ -106,15 +106,17 @@ int main()
 				printf("La bibliothéque n'a pas pu être trié !\n");
 			
 			break;
-			
-		default:
-			printf("Entrée incorrecte ! Veuillez rééssayer\n\n");
-			break;
 		case 6:
 			lireChaine("titre :", titre, K_MaxTit);
 			lireChaine("nom de l'emprunteur :", emprunteur.nomemprunteur,K_MaxEmp);
 			result = emprunt(&B,titre,&emprunteur);
 			
+			
+		default:
+			if (chx != 0){
+				printf("Entrée incorrecte ! Veuillez rééssayer\n\n");
+			}
+			break;
 		}
 
 
