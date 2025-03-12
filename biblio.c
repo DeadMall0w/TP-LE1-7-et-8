@@ -163,7 +163,9 @@ int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp *emprunteur)
 		pos = rechercherLivreParTitre(ptrB, titre);
 		if ( pos >= 0 && pos < ptrB->nbLivres)
 		{
-			stpcpy(ptrB->etagere[pos].emprunteur.nomemprunteur,emprunteur->nomemprunteur);
+			if ( *ptrB->etagere[pos].emprunteur.nomemprunteur == '\0'){
+				stpcpy(ptrB->etagere[pos].emprunteur.nomemprunteur,emprunteur->nomemprunteur);
+			}
 		}
 	return OK;
 	}

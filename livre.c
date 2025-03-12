@@ -8,6 +8,7 @@ lireChaine("AUTEUR :", (ptrL->auteur ), MAX);
 lireChaine("CODE :", (ptrL->code), MAX_TITRE );
 lireChaine("EDITEUR :", (ptrL->editeur ), MAX);
 printf("ANNEE : ");
+strcpy(ptrL->emprunteur.nomemprunteur,"\0");
 scanf("%d", &(ptrL->annee ));
 }
 
