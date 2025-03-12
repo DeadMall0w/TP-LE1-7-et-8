@@ -154,35 +154,6 @@ void chargement(T_Bibliotheque *ptrB)
 	else puts("ECHEC DE CHARGEMENT  !!!!!  ");
 }
 
-void lectureFichierTXT()
-{
-	int M=100;
-	FILE *fic=NULL; //le type FILE
-	char chaine[M];
-	char chaine2[M];
-	char c;
-	fic=fopen("fic.txt","rt"); // r = le mode read   w = mode write (avec ecrasement)
-	//fopen renvoie NULL si probleme (fichier effac� , disque non accessible ...
-	if (fic!=NULL)
-	{
-		do
-		{
-			//fgets(chaine,M,fic);   //fputs pour �crire dans un fichier txt
-			//fscanf(fic,"%s",chaine); //fprintf pour �crire dans un fichier txt
-		//	fscanf(fic,"%s %s",chaine,chaine2);
-			fscanf(fic,"%c",&c);
-			//fscanf(fic,"%c",&chaine[0]);
-		//	if (!feof(fic))
-			//printf("\n\t >%s--%s<",chaine,chaine2);
-			printf(">%c<",c);
-		}while(!feof(fic));
-		fclose(fic);
-		puts("\nLECTURE REUSSIE ..............");
-	}
-	else puts("ECHEC DE LECTURE DU FICHIER TXT !!!!!  ");
-}
-
-
 int emprunt(T_Bibliotheque *ptrB, const char* titre, const char* nom)
 {
 	// déclaration de pos(position du livre)

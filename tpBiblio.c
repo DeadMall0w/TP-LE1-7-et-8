@@ -54,16 +54,16 @@ int main()
 		switch(chx)
 		{
 		case  1 : reponse = ajouterLivre(&B);
-					if (reponse==OK)
-						printf("Ajout reussi !!");
-					else
-						printf("Impossible d ajouter (bibliotheque pleine)");
-				break;
+				if (reponse==OK)
+					printf("Ajout reussi !!");
+				else
+					printf("Impossible d ajouter (bibliotheque pleine)");
+			break;
 		case 2 : reponse=afficherBibliotheque(&B);
-				if (reponse==PAS_OK)	
-						printf("La bibliotheque est vide");
+			if (reponse==PAS_OK)	
+					printf("La bibliotheque est vide");
 
-				break;	
+			break;	
 		case 3:
 			lireChaine("titre :", titre, K_MaxTit);
 
