@@ -1,5 +1,6 @@
 #ifndef BIBLIO_H   //compilation conditionnelle
 #define BIBLIO_H
+
 #define OK 1
 #define PAS_OK -1
 
@@ -27,6 +28,5 @@ int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre);
 
 void sauvegarde(T_Bibliotheque *ptrB);
 void chargement(T_Bibliotheque *ptrB);
-void lectureFichierTXT();
 
 #endif
