@@ -184,9 +184,53 @@ int trier_titre(T_Bibliotheque *ptrB){
 	int i, j;
     char swapped;
     for (i = 0; i < ptrB->nbLivres - 1; i++) {
-        swapped = 0;
+		swapped = 0;
         for (j = 0; j < ptrB->nbLivres - i - 1; j++) {
-            if (ptrB->etagere[j].titre > ptrB->etagere[j+1].titre) {
+            if (strcmp(ptrB->etagere[j].titre,ptrB->etagere[j+1].titre) > 0) {
+                swap(&ptrB->etagere[j], &ptrB->etagere[j+1]);
+                swapped = 1;
+            }
+        }
+
+        // If no two elements were swapped by inner loop,
+        // then break
+        if (swapped == 0)
+            break;
+    }
+	
+	return OK;
+}
+
+
+// Le but de cette fonction est de trier par titre les données
+int trier_auteur(T_Bibliotheque *ptrB){
+	int i, j;
+    char swapped;
+    for (i = 0; i < ptrB->nbLivres - 1; i++) {
+		swapped = 0;
+        for (j = 0; j < ptrB->nbLivres - i - 1; j++) {
+            if (strcmp(ptrB->etagere[j].auteur, ptrB->etagere[j+1].auteur) > 0) {
+                swap(&ptrB->etagere[j], &ptrB->etagere[j+1]);
+                swapped = 1;
+            }
+        }
+
+        // If no two elements were swapped by inner loop,
+        // then break
+        if (swapped == 0)
+            break;
+    }
+	
+	return OK;
+}
+
+int trier_annee(T_Bibliotheque *ptrB){
+	int i, j;
+    char swapped;
+    for (i = 0; i < ptrB->nbLivres - 1; i++) {
+		swapped = 0;
+        for (j = 0; j < ptrB->nbLivres - i - 1; j++) {
+            if (ptrB->etagere[j].annee < ptrB->etagere[j+1].annee) {
                 swap(&ptrB->etagere[j], &ptrB->etagere[j+1]);
                 swapped = 1;
             }

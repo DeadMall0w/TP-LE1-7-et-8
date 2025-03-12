@@ -85,9 +85,22 @@ int main()
 			else
 				printf("Livre supprimé !\n");
 			break;
-		case 8:
-		// TODO
+		case 8: // trie par titre
 			result = trier_titre(&B); 
+			printf("Trie en cours...\n");
+			if (result == PAS_OK)
+				printf("La bibliothéque n'a pas pu être trié !\n");
+			
+			break;
+		case 9: // Trie par auteur
+			result = trier_auteur(&B); 
+			printf("Trie en cours...\n");
+			if (result == PAS_OK)
+				printf("La bibliothéque n'a pas pu être trié !\n");
+			
+			break;
+		case 10: // trie par année
+			result = trier_annee(&B); 
 			printf("Trie en cours...\n");
 			if (result == PAS_OK)
 				printf("La bibliothéque n'a pas pu être trié !\n");
