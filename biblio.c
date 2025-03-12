@@ -173,5 +173,30 @@ int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp *emprunteur)
 	}
 } 
 
+void swap(T_livre* xp, T_livre* yp){
+    T_livre temp = *xp;
+    *xp = *yp;
+    *yp = temp;
+}
 
+// Le but de cette fonction est de trier par titre les données
+int trier_titre(T_Bibliotheque *ptrB){
+	int i, j;
+    char swapped;
+    for (i = 0; i < ptrB->nbLivres - 1; i++) {
+        swapped = 0;
+        for (j = 0; j < ptrB->nbLivres - i - 1; j++) {
+            if (ptrB->etagere[j].titre > ptrB->etagere[j+1].titre) {
+                swap(&ptrB->etagere[j], &ptrB->etagere[j+1]);
+                swapped = 1;
+            }
+        }
 
+        // If no two elements were swapped by inner loop,
+        // then break
+        if (swapped == 0)
+            break;
+    }
+	
+	return OK;
+}

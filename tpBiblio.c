@@ -81,15 +81,18 @@ int main()
 			lireChaine("titre :", titre, K_MaxTit);
 			result = supprimerLivre(&B, titre);
 			if (result == PAS_OK)
-				printf("ERREUR : Livre non supprimé !");
+				printf("ERREUR : Livre non supprimé 0\n!");
 			else
-				printf("Livre supprimé !");
+				printf("Livre supprimé !\n");
 			break;
 		case 8:
-			//if (trier_titre() == PAS_OK)
-			//	printf("La bibliothéque n'a pas pu être trié !");
+		// TODO
+			result = trier_titre(&B); 
+			printf("Trie en cours...\n");
+			if (result == PAS_OK)
+				printf("La bibliothéque n'a pas pu être trié !\n");
 			
-				break;
+			break;
 			
 		default:
 			printf("Entrée incorrecte ! Veuillez rééssayer\n\n");

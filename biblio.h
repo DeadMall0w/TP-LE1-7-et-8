@@ -27,6 +27,7 @@ int rechercherLivresParAuteur(const T_Bibliotheque *ptrB, const char * auteur);
 int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre);
 int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp *emprunteur);
 
+int trier_titre(T_Bibliotheque *ptrB);
 void sauvegarde(T_Bibliotheque *ptrB);
 void chargement(T_Bibliotheque *ptrB);
 
