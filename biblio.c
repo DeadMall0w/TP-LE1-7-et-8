@@ -30,17 +30,12 @@ int  afficherBibliotheque(const T_Bibliotheque  *ptrB)
 	if(ptrB->nbLivres==0)
 		return PAS_OK;
 	else
-		{
+	{
 		for(i=0;i<ptrB->nbLivres;i++)
-			{
-			afficherLivre( &(ptrB->etagere[i])  );
-			
-			}
+			afficherLivre( &(ptrB->etagere[i]));	
 
-
-		
 		return OK;
-		}
+	}
 }
 
 int rechercherLivresParAuteur(const T_Bibliotheque *ptrB, const char * auteur)
