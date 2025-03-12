@@ -1,8 +1,4 @@
 # include "biblio.h"
-# include "livre.h"
-# include <time.h>
-
-#define TEMPS_LOCATION 20
 
 void init (T_Bibliotheque *ptrB)
 {
@@ -297,8 +293,8 @@ void lireDateSysteme(T_Emp *E)
 			{
 			fscanf(fic,"%s %d %s %d %s %s %s",j,&d,m,&a,vir,h,mer);		
 			if (!feof(fic)) 
-				printf("\n-->LU : %s- %d- %s- %d- %s- %s",j,d,m,a,h,mer);		
-
+				//printf("\n-->LU : %s- %d- %s- %d- %s- %s",j,d,m,a,h,mer);		
+				printf("\n");
 			}
 		fclose(fic);
 
@@ -349,13 +345,37 @@ int livreRetard(T_Bibliotheque* B){
 	for (int i = 0; i < B->nbLivres; i++)
 	{
 		if (strcmp(B->etagere[i].emprunteur.nomemprunteur, "") != 0)
-		if (B->etagere[i].emprunteur.timeStamp + TEMPS_LOCATION < currentTime){
-			// le livre est en retard 
-			printf("%s - %s \n", B->etagere[i].titre, B->etagere[i].emprunteur.nomemprunteur);
+		{
+
+			if (B->etagere[i].emprunteur.timeStamp + TEMPS_LOCATION < currentTime){
+				// le livre est en retard 
+				printf("%s - %s \n", B->etagere[i].titre, B->etagere[i].emprunteur.nomemprunteur);
+			}
 		}
 	}
 	
 
 	return OK;
 
+}
+
+
+int listeLivreDisponible(T_Bibliotheque* ptrB){
+	int i;
+	if(ptrB->nbLivres==0)
+		return PAS_OK;
+	else
+	{
+		for(i=0;i<ptrB->nbLivres;i++)
+		{
+			
+			if (strcmp(ptrB->etagere[i].emprunteur.nomemprunteur, "") == 0)
+			{
+				printf("--------------------------------------------------------- Livre %d :--------------------------------------------------------- \n",(i+1));
+				afficherLivre( &(ptrB->etagere[i])  );
+			}
+		}
+
+		return OK;
+	}
 }

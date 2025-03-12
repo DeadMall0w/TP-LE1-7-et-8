@@ -5,7 +5,9 @@
 #define PAS_OK -1
 
 #include "livre.h"
+#include <time.h>
 
+#define TEMPS_LOCATION 20
 #define CAPACITE_BIBLIO 20 // nb maximum de livres ds la bibliotheque
 
 typedef  T_livre 	T_tabloDeLivres[CAPACITE_BIBLIO];
@@ -31,7 +33,7 @@ int trier_titre(T_Bibliotheque *ptrB);
 int trier_auteur(T_Bibliotheque *ptrB);
 int trier_annee(T_Bibliotheque *ptrB);
 void lireDateSysteme(T_Emp *E);
-
+int listeLivreDisponible(T_Bibliotheque* ptrB);
 
 int livreRetard(T_Bibliotheque* B);
 
