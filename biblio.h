@@ -30,6 +30,7 @@ int rendre(T_Bibliotheque *ptrB, const char* titre);
 int trier_titre(T_Bibliotheque *ptrB);
 int trier_auteur(T_Bibliotheque *ptrB);
 int trier_annee(T_Bibliotheque *ptrB);
+void lireDateSysteme(T_Emp *E);
 
 void sauvegarde(T_Bibliotheque *ptrB);
 void chargement(T_Bibliotheque *ptrB);
