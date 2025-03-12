@@ -183,7 +183,25 @@ void lectureFichierTXT()
 }
 
 
-
+int emprunt(T_Bibliotheque *ptrB, const char* titre, const char* nom)
+{
+	// déclaration de pos(position du livre)
+	int pos;
+	// vérifie que l'emprunt  est possible
+	if (ptrB->nbLivres > 0) 
+	{
+		pos = rechercherLivreParTitre(ptrB, titre);
+		if ( pos >= 0 && pos < ptrB->nbLivres)
+		{
+			stpcpy(ptrB->etagere[pos].emprunteur.nomemprunteur,nom);
+		}
+	return OK;
+	}
+	else 
+	{
+		return PAS_OK;
+	}
+} 
 
 
 
