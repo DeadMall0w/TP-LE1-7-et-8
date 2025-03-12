@@ -166,6 +166,7 @@ int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp *emprunteur)
 		{
 			if ( *ptrB->etagere[pos].emprunteur.nomemprunteur == '\0'){
 				stpcpy(ptrB->etagere[pos].emprunteur.nomemprunteur,emprunteur->nomemprunteur);
+				lireDateSysteme(&ptrB->etagere[pos].emprunteur);
 			}else{
 				return PAS_OK;
 			}
