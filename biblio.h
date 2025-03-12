@@ -26,7 +26,7 @@ int supprimerLivre(T_Bibliotheque *ptrB, const char* titre );
 int rechercherLivresParAuteur(const T_Bibliotheque *ptrB, const char * auteur);
 int rechercherLivreParTitre(const T_Bibliotheque *ptrB, const char * titre);
 int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp *emprunteur);
-
+int rendre(T_Bibliotheque *ptrB, const char* titre);
 int trier_titre(T_Bibliotheque *ptrB);
 int trier_auteur(T_Bibliotheque *ptrB);
 int trier_annee(T_Bibliotheque *ptrB);

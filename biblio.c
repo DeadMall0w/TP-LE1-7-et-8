@@ -165,7 +165,11 @@ int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp *emprunteur)
 		{
 			if ( *ptrB->etagere[pos].emprunteur.nomemprunteur == '\0'){
 				stpcpy(ptrB->etagere[pos].emprunteur.nomemprunteur,emprunteur->nomemprunteur);
+			}else{
+				return PAS_OK;
 			}
+		}else{
+			return PAS_OK;
 		}
 	return OK;
 	}
@@ -174,6 +178,30 @@ int emprunt(T_Bibliotheque *ptrB, const char* titre, const T_Emp *emprunteur)
 		return PAS_OK;
 	}
 } 
+
+
+int rendre(T_Bibliotheque *ptrB, const char* titre){
+	// déclaration de pos(position du livre)
+	int pos;
+	// vérifie que l'emprunt  est possible
+	if (ptrB->nbLivres > 0) 
+	{
+		pos = rechercherLivreParTitre(ptrB, titre);
+		if ( pos >= 0 && pos < ptrB->nbLivres)
+		{
+			if ( *ptrB->etagere[pos].emprunteur.nomemprunteur != '\0'){
+				stpcpy(ptrB->etagere[pos].emprunteur.nomemprunteur,"");
+			}else{
+				return PAS_OK;
+			}
+		}
+		return OK;
+	}
+	else 
+	{
+		return PAS_OK;
+	}
+}
 
 void swap(T_livre* xp, T_livre* yp){
     T_livre temp = *xp;

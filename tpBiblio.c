@@ -110,7 +110,20 @@ int main()
 			lireChaine("titre :", titre, K_MaxTit);
 			lireChaine("nom de l'emprunteur :", emprunteur.nomemprunteur,K_MaxEmp);
 			result = emprunt(&B,titre,&emprunteur);
-			
+			if (result == OK)
+				printf("Le livre à bien été empreinté !\n");
+			else
+				printf("Le livre n'a pas pu être empreinté !\n");
+			break;
+		case 7:
+			lireChaine("titre :", titre, K_MaxTit);
+			result = rendre(&B,titre);
+			if (result == OK)
+				printf("Le livre à bien été rendu !\n");
+			else
+				printf("Le livre n'a pas pu être rendu !\n");
+				
+			break;
 			
 		default:
 			if (chx != 0){
