@@ -32,15 +32,11 @@ int  afficherBibliotheque(const T_Bibliotheque  *ptrB)
 	else
 	{
 		for(i=0;i<ptrB->nbLivres;i++)
-<<<<<<< HEAD
-			afficherLivre( &(ptrB->etagere[i]));	
-=======
 			{
 			printf("--------------------------------------------------------- Livre %d :--------------------------------------------------------- \n",(i+1));
 			afficherLivre( &(ptrB->etagere[i])  );
 			
 			}
->>>>>>> master
 
 		return OK;
 	}
