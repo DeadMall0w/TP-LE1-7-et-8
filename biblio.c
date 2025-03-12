@@ -299,31 +299,29 @@ void lireDateSysteme(T_Emp *E)
 
 			}
 		fclose(fic);
-	
-	//enum T_jour myVar = MEDIUM;
 
-	if (strcmp(j,"lundi")==0) E->lejour=lundi;
-	if (strcmp(j,"mardi")==0) E->lejour=mardi;
-	if (strcmp(j,"mercredi")==0) E->lejour=mercredi;
-	if (strcmp(j,"jeudi")==0) E->lejour=jeudi;
-	if (strcmp(j,"vendredi")==0) E->lejour=vendredi;
-	if (strcmp(j,"samedi")==0) E->lejour=samedi;
-	if (strcmp(j,"dimanche")==0) E->lejour=dimanche;
+	if (strcmp(j,"lundi")==0) E->lejour=lu;
+	if (strcmp(j,"mardi")==0) E->lejour=ma;
+	if (strcmp(j,"mercredi")==0) E->lejour=me;
+	if (strcmp(j,"jeudi")==0) E->lejour=je;
+	if (strcmp(j,"vendredi")==0) E->lejour=ve;
+	if (strcmp(j,"samedi")==0) E->lejour=sa;
+	if (strcmp(j,"dimanche")==0) E->lejour=di;
 
-	E->ladate=d;
+	E->ledate=d;
 
-	if (strcmp(m,"janvier")==0) E->lemois=janvier;
-	if (strcmp(m,"fevrier")==0) E->lemois=fevrier;
+	if (strcmp(m,"janvier")==0) E->lemois=janv;
+	if (strcmp(m,"fevrier")==0) E->lemois=fevr;
 	if (strcmp(m,"mars")==0) E->lemois=mars;
-	if (strcmp(m,"avril")==0) E->lemois=avril;
+	if (strcmp(m,"avril")==0) E->lemois=avri;
 	if (strcmp(m,"mai")==0) E->lemois=mai;
 	if (strcmp(m,"juin")==0) E->lemois=juin;
-	if (strcmp(m,"juillet")==0) E->lemois=juillet;
+	if (strcmp(m,"juillet")==0) E->lemois=juil;
 	if (strcmp(m,"aout")==0) E->lemois=aout;
-	if (strcmp(m,"septembre")==0) E->lemois=septembre;
-	if (strcmp(m,"octobre")==0) E->lemois=octobre;
-	if (strcmp(m,"novembre")==0) E->lemois=novembre;
-	if (strcmp(m,"decembre")==0) E->lemois=decembre;
+	if (strcmp(m,"septembre")==0) E->lemois=sept;
+	if (strcmp(m,"octobre")==0) E->lemois=octo;
+	if (strcmp(m,"novembre")==0) E->lemois=nove;
+	if (strcmp(m,"decembre")==0) E->lemois=dece;
 
 
 	E->lannee=a;
@@ -333,9 +331,9 @@ void lireDateSysteme(T_Emp *E)
 			printf("n souci avec la date systeme !!");
 			
 			//on range une date irrÃ©elle 
-			E->lejour=dimanche;
-			E->ladate=99;
-			E->lemois=decembre;
+			E->lejour=di;
+			E->ledate=99;
+			E->lemois=dece;
 			E->lannee=-999;
 
 
