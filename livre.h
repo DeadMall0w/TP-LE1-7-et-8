@@ -27,7 +27,7 @@ typedef enum {janv,fevr,mars,avri,mai,juin,juil,aout,sept,octo,nove,dece} T_Mois
 
 typedef struct
 {
-char nomemprunteur[50];
+char nomemprunteur[K_MaxEmp];
 T_Jour lejour;
 int ledate;
 T_Mois lemois;

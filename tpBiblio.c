@@ -38,6 +38,8 @@ return choix;
 
 int main()
 {
+	int result;
+	T_Emp emprunteur;
 	int reponse,chx;
 	T_Bibliotheque B; 
 	init(&B);
@@ -71,8 +73,7 @@ int main()
 			break;
 		case 5:
 			lireChaine("titre :", titre, K_MaxTit);
-
-			int result = supprimerLivre(&B, titre);
+			result = supprimerLivre(&B, titre);
 			if (result == PAS_OK)
 				printf("ERREUR : Livre non supprimé !");
 			else
@@ -81,7 +82,14 @@ int main()
 		default:
 			printf("Entrée incorrecte ! Veuillez rééssayer\n\n");
 			break;
+		case 6:
+			int result;
+			lireChaine("titre :", titre, K_MaxTit);
+			lireChaine("nom de l'emprunteur :", emprunteur.nomemprunteur,K_MaxEmp);
+			result = emprunt(&B,titre,emprunteur);
+			
 		}
+
 
 	}while(chx!=0);
 
