@@ -84,8 +84,8 @@ int main()
 				printf("Livre supprimé !");
 			break;
 		case 8:
-			if (trier_titre() == PAS_OK)
-				printf("La bibliothéque n'a pas pu être trié !");
+			//if (trier_titre() == PAS_OK)
+			//	printf("La bibliothéque n'a pas pu être trié !");
 			
 				break;
 			
